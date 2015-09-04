@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.846;
+    color: #666666;
+    background-color: #fafafa;
+}
+
+.jumbotron {
+	background-color: white;
+}
+
+.jumbotron > p {
+	font-size: 1.5em;
+
+}
+
+.post-title {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.post-meta {
+	display: inline;
+	font-size: 1em;
+}
+
+.carousel  .item {
+	height: 75vh;
+}
+
+
+
+
+
+

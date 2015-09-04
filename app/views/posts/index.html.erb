@@ -1,4 +1,98 @@
-<% @posts.each do |post| %>
-  <%= post.title %>
-  <%= post.body %>
-<% end -%>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+       <!-- Indicators -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="img/img17.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <p><a class="btn btn-lg btn-primary" href="events.html" role="button">View upcoming projects</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/2.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <p><a class="btn btn-md btn-primary" href="events.html" role="button">View upcoming projects</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.carousel -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <%= image_tag ("imgF0"), class: "img-circle", alt: "Veterans Build", style: "width: 140px; height:140px;" %>
+          <h2>Veteran's Build 2015</h2>
+          <p>Join us in this years Veterans Day build to serve those who have served us.</p>
+          <p><a class="btn btn-primary" href="events.html" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <%= image_tag ("img3F"), class: "img-circle", alt: "Veterans Build", style: "width: 140px; height:140px;" %>
+          <h2>Safe Home Healthy Home</h2>
+          <p>help make the difference in the lives of those who live near us.</p>
+          <p><a class="btn btn-primary" href="sh3.html" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <%= image_tag ("imgEE"), class: "img-circle", alt: "Veterans Build", style: "width: 140px; height:140px;" %>
+          <h2>Impact<br>2015</h2>
+          <p>In its 12 year, this year Impact will be held June 1-5.</p>
+          <p><a class="btn btn-primary" href="impact.html" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      <br>
+      <div class="row text-center">
+        <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fsquarefootministry&width&height=62&colorscheme=light&show_faces=false&header=false&stream=false&show_border=false" style="border:none;"></iframe>  
+      </div>
+      <% @posts.each do |post| %>
+      	<div class="jumbotron news-item">
+          <h3 class="post-title">
+              <%= post.title %>
+          </h3>
+          <p class="post-meta"><%= post.created_at.strftime("%b %d, %Y") %></p>
+          <hr>
+          <p class="post-item">
+             <%= post.body %>
+          </p>
+      
+          
+          <p><%=link_to "Read More", post, class: 'btn btn-primary' %></p>
+     	</div>
+ 	  <% end -%>
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="./index.html">Back to top</a></p>
+        <p>© 2015 Square Foot Ministry · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+    <script src="./stylesheets/jquery.min.js"></script>
+    <script src="./stylesheets/bootstrap.min.js"></script>
+    <script src="./stylesheets/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./stylesheets/ie10-viewport-bug-workaround.js"></script>
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+    <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>

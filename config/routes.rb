@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
+  get 'donate' => 'donate#index'
+
+  get 'contact' => 'contact#index'
+
+  get 'calendar' => 'calendar#index'
+
+  get 'donate' => 'donate#index'
+
+  get 'volunteer' => 'volunteer#index'
+
   devise_for :users
   resources :posts
+  get 'about' => 'about#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,5 +1,11 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body %>
-  <%= f.button :submit %>
-<% end -%>
+<div class="container">
+	<div class="col-6">
+		<div class="row">
+		<%= simple_form_for @post do |f| %>
+		  <%= f.input :title %>
+		  <%= f.input :body %>
+		  <%= f.button :submit %>
+		<% end -%>
+		</div>
+	</div>
+</div>
