@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :galleries
   get 'donate' => 'donate#index'
 
   get 'contact' => 'contact#index'
@@ -9,7 +10,16 @@ Rails.application.routes.draw do
 
   get 'volunteer' => 'volunteer#index'
 
+  get 'sh3' => 'events#sh3'
+
+  get 'events' => 'events#index'
+
+  get 'impact' => 'events#impact'
+
   devise_for :users
+  resources :gallaries 
+  resources :pictures
+  
   resources :posts
   get 'about' => 'about#index'
   # The priority is based upon order of creation: first created -> highest priority.

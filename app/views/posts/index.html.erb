@@ -1,5 +1,4 @@
-
-    <!-- Carousel
+   <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
        <!-- Indicators -->
@@ -35,25 +34,29 @@
           <%= image_tag ("imgF0"), class: "img-circle", alt: "Veterans Build", style: "width: 140px; height:140px;" %>
           <h2>Veteran's Build 2015</h2>
           <p>Join us in this years Veterans Day build to serve those who have served us.</p>
-          <p><a class="btn btn-primary" href="events.html" role="button">View details »</a></p>
+	  <p><%= link_to "View details", events_path, class: 'btn btn-primary' %></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <%= image_tag ("img3F"), class: "img-circle", alt: "Veterans Build", style: "width: 140px; height:140px;" %>
           <h2>Safe Home Healthy Home</h2>
           <p>help make the difference in the lives of those who live near us.</p>
-          <p><a class="btn btn-primary" href="sh3.html" role="button">View details »</a></p>
+          <p><%= link_to "View details", sh3_path, class: 'btn btn-primary' %></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <%= image_tag ("imgEE"), class: "img-circle", alt: "Veterans Build", style: "width: 140px; height:140px;" %>
           <h2>Impact<br>2015</h2>
           <p>In its 12 year, this year Impact will be held June 1-5.</p>
-          <p><a class="btn btn-primary" href="impact.html" role="button">View details »</a></p>
+          <p><%= link_to "View details", impact_path, class: 'btn btn-primary' %></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       <br>
       <div class="row text-center">
         <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fsquarefootministry&width&height=62&colorscheme=light&show_faces=false&header=false&stream=false&show_border=false" style="border:none;"></iframe>  
       </div>
+      <% if user_signed_in? %>
+         <%= link_to "New Post", new_post_path, class: 'btn btn-mini' %>
+         <br> 
+      <% end %>     
       <% @posts.each do |post| %>
       	<div class="jumbotron news-item">
           <h3 class="post-title">
@@ -62,7 +65,7 @@
           <p class="post-meta"><%= post.created_at.strftime("%b %d, %Y") %></p>
           <hr>
           <p class="post-item">
-             <%= post.body %>
+             <%= truncate post.body, length: 160  %>
           </p>
       
           

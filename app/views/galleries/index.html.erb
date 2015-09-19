@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <h1>Galleries</h1>
+    <% if user_signed_in? %>  
+      <%= link_to 'New', new_gallery_path, :class => 'btn btn-mini' %>
+    <% end %>    
+    <p></p>
+	<% @galleries.reverse.each do |gallery| %>       
+            <div class="gallery-container">
+              <% if gallery.pictures.first %>
+		<p id="gallery-title"><%= gallery.name %></p>  
+                <%= link_to image_tag(gallery.pictures.first.image.url), gallery_path(gallery), :class => 'gallery' %>
+              <% else %>
+                N/A
+              <% end %>
+              <div class="caption">
+                <p style="text-align: center;">
+                <% if user_signed_in? %> 
+                  <%= link_to "Show", gallery_path(gallery) %>
+                  <%= link_to "Edit", edit_gallery_path(gallery) %>
+                  <%= link_to "Delete", gallery,
+                    :data => { :confirm => "Are you sure?" },
+                    :method => :delete
+                  %>
+ 		<% end %>              
+                </p>
+              </div>
+            </div>
+      <% end %>
+  </div>
+</div>

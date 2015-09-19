@@ -8,6 +8,10 @@
   <script></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <style type="text/css">
       .navbar-default .navbar-fixed-top .navbar {
         border-radius: 0px;
@@ -44,16 +48,11 @@
                 <li><%= link_to "Donate", donate_path %></li>
                 <li><%= link_to "Calendar", calendar_path %></li>
                 <li><%= link_to "Contact", contact_path %></li>
-                <li class="dropdown">
-                  <a href="comingsoon.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Upcoming Projects <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header">Events</li>
-                    <li><a href="./impact.html">Impact 2015</a></li>
-                    <li><a href="./sh3.html">SH3</a></li>
-                    <li><a href="#">Veteran's Build</a></li>
-                  </ul>
-                </li>
-              </ul>
+		<li><%= link_to "Gallery", galleries_path %><li>
+	        <% if user_signed_in? %>
+			<li><%= link_to "Signout", destroy_user_session_path, :method => 'delete' %></li>
+	        <% end %>	
+	      </ul>
             </div>
           </div>
         </nav>
