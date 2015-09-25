@@ -1,4 +1,3 @@
-<!-- app/views/galleries/_form.html.erb -->
 <%= simple_form_for @gallery, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
   <div class="control-group">
     <div class="controls">
@@ -13,12 +12,6 @@
 
   <div class="control-group">
     <div class="controls">
-      <!-- The magic is coming ...look at my eyes....shazammmm -->
-      <!-- Use HTML5 multiple attribute to enable multiple selection
-           and pass back to controller all files as an array, ready 
-           for paperclip!!
-           file_field_tag, since images is not a gallery attribute
-       -->
       <%= file_field_tag "images[]", type: :file, multiple: true %>
     </div>
   </div>
