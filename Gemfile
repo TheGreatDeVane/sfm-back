@@ -24,7 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #authentification
 gem 'devise'
-#forms
+#storage
+gem 'aws-sdk', '~> 2.2', '>= 2.2.5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
