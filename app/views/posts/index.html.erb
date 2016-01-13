@@ -2,37 +2,22 @@
     ================================================== -->
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-       <!-- Indicators -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <div class="item">
-            <%= image_tag("Blog-copy.jpg", :alt => "Blog") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <p><a class="btn btn-md btn-primary" href="events.html" role="button">Check out our blog below</a></p>
-            </div>
-          </div>
-        </div>
-          
-        </div>
-        <div class="item">
-          <%= image_tag("donate.jpg", :alt => "Please Donate") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <p><a class="btn btn-md btn-primary" href="/donate" role="button">Please Donate</a></p>
-            </div>
+          <%= image_tag("griffin.jpg", :alt => "Blog") %>
+          <div class="carousel-caption">
+            <p><a class="btn btn-md btn-primary" href="events.html" role="button">Check out our blog below</a></p>
           </div>
         </div>
         <div class="item">
           <%= image_tag("Volunteer-copy.jpg", :alt => "Donate") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <p><a class="btn btn-md btn-primary" href="events.html" role="button">Volunteer</a></p>
-            </div>
+          <div class="carousel-caption">
+            <p><a class="btn btn-md btn-primary" href="events.html" role="button">Volunteer</a></p>
           </div>
         </div>
       </div>
-    </div><!-- /.carousel -->
+    </div>
+
 
 
     <!-- Marketing messaging and featurettes
@@ -69,7 +54,7 @@
          <%= link_to "New Post", new_post_path, class: 'btn btn-mini' %>
          <br> 
       <% end %>     
-      <% @posts.each do |post| %>
+      <% @posts.reverse_each do |post| %>
       	<div class="jumbotron news-item">
           <h3 class="post-title">
               <%= post.title %>
@@ -100,7 +85,7 @@
     <script src="./stylesheets/ie10-viewport-bug-workaround.js"></script>
     <script>
     $('.carousel').carousel({
-        interval: 5000 //changes the speed
+        interval: 2000 //changes the speed
     })
     </script>
     <div id="fb-root"></div>
